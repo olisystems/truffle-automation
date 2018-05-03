@@ -1,0 +1,3977 @@
+{
+  "contractName": "OliOrigin",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "kill",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "paymentAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "latOfLocation",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "name": "longOfLocation",
+          "type": "uint32"
+        }
+      ],
+      "name": "newAddedOli",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "oli",
+          "type": "address"
+        },
+        {
+          "name": "lat",
+          "type": "uint32"
+        },
+        {
+          "name": "long",
+          "type": "uint32"
+        },
+        {
+          "name": "trafo",
+          "type": "uint32"
+        },
+        {
+          "name": "ckt",
+          "type": "uint8"
+        },
+        {
+          "name": "typex",
+          "type": "uint8"
+        },
+        {
+          "name": "pload",
+          "type": "uint16[]"
+        }
+      ],
+      "name": "addOli",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_account",
+          "type": "address"
+        }
+      ],
+      "name": "get_oliType",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_account",
+          "type": "address"
+        },
+        {
+          "name": "_index",
+          "type": "uint8"
+        }
+      ],
+      "name": "get_oliPeakLoad",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_account",
+          "type": "address"
+        }
+      ],
+      "name": "get_oliCkt",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_account",
+          "type": "address"
+        }
+      ],
+      "name": "get_oliTrafoid",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_tid",
+          "type": "uint32"
+        }
+      ],
+      "name": "get_gsoAddr",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6060604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610944806100536000396000f300606060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632fe99b9b146100885780633befa275146100db57806341c0e1b51461012e57806362f6b0ec146101435780638ac8916c1461019c578063b36673af14610205578063ffbe620d14610266575b600080fd5b341561009357600080fd5b6100bf600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610324565b604051808260ff1660ff16815260200191505060405180910390f35b34156100e657600080fd5b610112600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061037d565b604051808260ff1660ff16815260200191505060405180910390f35b341561013957600080fd5b6101416103d6565b005b341561014e57600080fd5b61017a600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610467565b604051808263ffffffff1663ffffffff16815260200191505060405180910390f35b34156101a757600080fd5b6101c3600480803563ffffffff169060200190919050506104c3565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561021057600080fd5b610248600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803560ff1690602001909190505061050c565b604051808261ffff1661ffff16815260200191505060405180910390f35b341561027157600080fd5b610322600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803563ffffffff1690602001909190803563ffffffff1690602001909190803563ffffffff1690602001909190803560ff1690602001909190803560ff169060200190919080359060200190820180359060200190808060200260200160405190810160405280939291908181526020018383602002808284378201915050505050509190505061058c565b005b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001600d9054906101000a900460ff169050919050565b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001600c9054906101000a900460ff169050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610465576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160089054906101000a900463ffffffff169050919050565b6000600260008363ffffffff1663ffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001018260ff1681548110151561056057fe5b90600052602060002090601091828204019190066002029054906101000a900461ffff16905092915050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156108345760c0604051908101604052808763ffffffff1681526020018663ffffffff1681526020018563ffffffff1681526020018460ff1681526020018360ff16815260200182815250600160008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548163ffffffff021916908363ffffffff16021790555060208201518160000160046101000a81548163ffffffff021916908363ffffffff16021790555060408201518160000160086101000a81548163ffffffff021916908363ffffffff160217905550606082015181600001600c6101000a81548160ff021916908360ff160217905550608082015181600001600d6101000a81548160ff021916908360ff16021790555060a082015181600101908051906020019061073992919061083d565b509050507fe5d143938ef26b06189073aced7863c420b65d073340f7b6d66496725ec56ff5878787604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018363ffffffff1663ffffffff1681526020018263ffffffff1663ffffffff168152602001935050505060405180910390a160088260ff1614156108335786600260008663ffffffff1663ffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5b50505050505050565b82805482825590600052602060002090600f016010900481019282156108d65791602002820160005b838211156108a657835183826101000a81548161ffff021916908361ffff1602179055509260200192600201602081600101049283019260010302610866565b80156108d45782816101000a81549061ffff02191690556002016020816001010492830192600103026108a6565b505b5090506108e391906108e7565b5090565b61091591905b8082111561091157600081816101000a81549061ffff0219169055506001016108ed565b5090565b905600a165627a7a72305820f6f8f46ee1ba0c9dfc005b35180bd2dbecb68e791dd8394adb92d6006d348d890029",
+  "deployedBytecode": "0x606060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632fe99b9b146100885780633befa275146100db57806341c0e1b51461012e57806362f6b0ec146101435780638ac8916c1461019c578063b36673af14610205578063ffbe620d14610266575b600080fd5b341561009357600080fd5b6100bf600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610324565b604051808260ff1660ff16815260200191505060405180910390f35b34156100e657600080fd5b610112600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061037d565b604051808260ff1660ff16815260200191505060405180910390f35b341561013957600080fd5b6101416103d6565b005b341561014e57600080fd5b61017a600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610467565b604051808263ffffffff1663ffffffff16815260200191505060405180910390f35b34156101a757600080fd5b6101c3600480803563ffffffff169060200190919050506104c3565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561021057600080fd5b610248600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803560ff1690602001909190505061050c565b604051808261ffff1661ffff16815260200191505060405180910390f35b341561027157600080fd5b610322600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803563ffffffff1690602001909190803563ffffffff1690602001909190803563ffffffff1690602001909190803560ff1690602001909190803560ff169060200190919080359060200190820180359060200190808060200260200160405190810160405280939291908181526020018383602002808284378201915050505050509190505061058c565b005b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001600d9054906101000a900460ff169050919050565b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001600c9054906101000a900460ff169050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610465576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160089054906101000a900463ffffffff169050919050565b6000600260008363ffffffff1663ffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001018260ff1681548110151561056057fe5b90600052602060002090601091828204019190066002029054906101000a900461ffff16905092915050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156108345760c0604051908101604052808763ffffffff1681526020018663ffffffff1681526020018563ffffffff1681526020018460ff1681526020018360ff16815260200182815250600160008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548163ffffffff021916908363ffffffff16021790555060208201518160000160046101000a81548163ffffffff021916908363ffffffff16021790555060408201518160000160086101000a81548163ffffffff021916908363ffffffff160217905550606082015181600001600c6101000a81548160ff021916908360ff160217905550608082015181600001600d6101000a81548160ff021916908360ff16021790555060a082015181600101908051906020019061073992919061083d565b509050507fe5d143938ef26b06189073aced7863c420b65d073340f7b6d66496725ec56ff5878787604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018363ffffffff1663ffffffff1681526020018263ffffffff1663ffffffff168152602001935050505060405180910390a160088260ff1614156108335786600260008663ffffffff1663ffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5b50505050505050565b82805482825590600052602060002090600f016010900481019282156108d65791602002820160005b838211156108a657835183826101000a81548161ffff021916908361ffff1602179055509260200192600201602081600101049283019260010302610866565b80156108d45782816101000a81549061ffff02191690556002016020816001010492830192600103026108a6565b505b5090506108e391906108e7565b5090565b61091591905b8082111561091157600081816101000a81549061ffff0219169055506001016108ed565b5090565b905600a165627a7a72305820f6f8f46ee1ba0c9dfc005b35180bd2dbecb68e791dd8394adb92d6006d348d890029",
+  "sourceMap": "50:1642:6:-;;;214:10:9;206:5;;:18;;;;;;;;;;;;;;;;;;50:1642:6;;;;;;",
+  "deployedSourceMap": "50:1642:6:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1009:121;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1335:118;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;84:99:8;;;;;;;;;;;;;;1459:127:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1591:94;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1180:149;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;658:301;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1009:121;1066:5;1090:17;:27;1108:8;1090:27;;;;;;;;;;;;;;;:33;;;;;;;;;;;;1083:40;;1009:121;;;:::o;1335:118::-;1391:5;1415:17;:27;1433:8;1415:27;;;;;;;;;;;;;;;:31;;;;;;;;;;;;1408:38;;1335:118;;;:::o;84:99:8:-;136:5;;;;;;;;;;;122:19;;:10;:19;;;118:57;;;169:5;;;;;;;;;;;156:19;;;118:57;84:99::o;1459:127:6:-;1519:6;1544:17;:27;1562:8;1544:27;;;;;;;;;;;;;;;:35;;;;;;;;;;;;1537:42;;1459:127;;;:::o;1591:94::-;1643:7;1669:3;:9;1673:4;1669:9;;;;;;;;;;;;;;;;;;;;;;;;;1662:16;;1591:94;;;:::o;1180:149::-;1255:6;1280:17;:27;1298:8;1280:27;;;;;;;;;;;;;;;:34;;1315:6;1280:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1273:49;;1180:149;;;;:::o;658:301::-;121:5:9;;;;;;;;;;;107:19;;:10;:19;;;103:53;;;810:44:6;;;;;;;;;818:3;810:44;;;;;;823:4;810:44;;;;;;829:5;810:44;;;;;;836:3;810:44;;;;;;841:5;810:44;;;;;;848:5;810:44;;;785:17;:22;803:3;785:22;;;;;;;;;;;;;;;:69;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;864:27;876:3;881;886:4;864:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;912:1;905:5;:8;;;901:52;;;939:3;928;:10;932:5;928:10;;;;;;;;;;;;;;;;:14;;;;;;;;;;;;;;;;;;901:52;103:53:9;658:301:6;;;;;;;:::o;50:1642::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.11;\n\nimport \"./mortal.sol\";\n\ncontract OliOrigin is mortal{\n  \n    mapping (address => Details) OliAddressMapping;\n    mapping (uint32 => address) GSO;\n\n\n    event newAddedOli(address paymentAddress, uint32 latOfLocation, uint32 longOfLocation);\n    \n    struct Details {\n        uint32 latitude;\n        uint32 longitude;\n        uint32 trafoid;\n        uint8 ckt; //In case of Prosumers' ckt rep. --> 1st ckt:0; 2nd ckt:1; In case of Trafo 4branches --> 4 ckt\n        uint8 _type; //0:PV, 1:Wind, 2:CCP, 3:CHP, 4:Coal, 5:battery+, 6: battery-, 7:Consumer, 8:DNO\n        uint16[] _pload; // if _type=8 then index:0->trafoload\n    }\n\n    function addOli(address oli, uint32 lat, uint32 long, uint32 trafo, uint8 ckt, uint8 typex, uint16[] pload) onlyowner{\n        OliAddressMapping[oli] = Details(lat, long, trafo, ckt, typex, pload);\n        newAddedOli(oli, lat, long);\n        if (typex==8){\n            GSO[trafo]=oli;\n        }\n    }\n\n    //Oli types passing to Daughter Auction\n    function get_oliType(address _account) constant returns (uint8) {\n        return OliAddressMapping[_account]._type;\n    }\n    //Oli amount passing to Daughter Auction\n    function get_oliPeakLoad(address _account, uint8 _index) constant returns (uint16) {\n        return OliAddressMapping[_account]._pload[_index];\n    }\n\n    function get_oliCkt(address _account) constant returns (uint8) {\n        return OliAddressMapping[_account].ckt;\n    }\n\n    function get_oliTrafoid(address _account) constant returns (uint32) {\n        return OliAddressMapping[_account].trafoid;\n    }\n    function get_gsoAddr(uint32 _tid) constant returns (address) {\n        return GSO[_tid];\n    }\n    \n}\n",
+  "sourcePath": "D:\\02_OLI\\Projects\\truffle_auto\\contracts\\OliOrigin.sol",
+  "ast": {
+    "absolutePath": "/D/02_OLI/Projects/truffle_auto/contracts/OliOrigin.sol",
+    "exportedSymbols": {
+      "OliOrigin": [
+        4498
+      ]
+    },
+    "id": 4499,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4345,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:6"
+      },
+      {
+        "absolutePath": "/D/02_OLI/Projects/truffle_auto/contracts/mortal.sol",
+        "file": "./mortal.sol",
+        "id": 4346,
+        "nodeType": "ImportDirective",
+        "scope": 4499,
+        "sourceUnit": 5201,
+        "src": "26:22:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 4347,
+              "name": "mortal",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5200,
+              "src": "72:6:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_mortal_$5200",
+                "typeString": "contract mortal"
+              }
+            },
+            "id": 4348,
+            "nodeType": "InheritanceSpecifier",
+            "src": "72:6:6"
+          }
+        ],
+        "contractDependencies": [
+          5200,
+          5224
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4498,
+        "linearizedBaseContracts": [
+          4498,
+          5200,
+          5224
+        ],
+        "name": "OliOrigin",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4352,
+            "name": "OliAddressMapping",
+            "nodeType": "VariableDeclaration",
+            "scope": 4498,
+            "src": "87:46:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+              "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+            },
+            "typeName": {
+              "id": 4351,
+              "keyType": {
+                "id": 4349,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "96:7:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "87:28:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 4350,
+                "name": "Details",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 4378,
+                "src": "107:7:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Details_$4378_storage_ptr",
+                  "typeString": "struct OliOrigin.Details storage pointer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 4356,
+            "name": "GSO",
+            "nodeType": "VariableDeclaration",
+            "scope": 4498,
+            "src": "139:31:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint32_$_t_address_$",
+              "typeString": "mapping(uint32 => address)"
+            },
+            "typeName": {
+              "id": 4355,
+              "keyType": {
+                "id": 4353,
+                "name": "uint32",
+                "nodeType": "ElementaryTypeName",
+                "src": "148:6:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "139:27:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint32_$_t_address_$",
+                "typeString": "mapping(uint32 => address)"
+              },
+              "valueType": {
+                "id": 4354,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "158:7:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "id": 4364,
+            "name": "newAddedOli",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4363,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4358,
+                  "indexed": false,
+                  "name": "paymentAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4364,
+                  "src": "196:22:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4357,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "196:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4360,
+                  "indexed": false,
+                  "name": "latOfLocation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4364,
+                  "src": "220:20:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4359,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "220:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4362,
+                  "indexed": false,
+                  "name": "longOfLocation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4364,
+                  "src": "242:21:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4361,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "242:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "195:69:6"
+            },
+            "src": "178:87:6"
+          },
+          {
+            "canonicalName": "OliOrigin.Details",
+            "id": 4378,
+            "members": [
+              {
+                "constant": false,
+                "id": 4366,
+                "name": "latitude",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "300:15:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 4365,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "300:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4368,
+                "name": "longitude",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "325:16:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 4367,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "325:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4370,
+                "name": "trafoid",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "351:14:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 4369,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "351:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4372,
+                "name": "ckt",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "375:9:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 4371,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "375:5:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4374,
+                "name": "_type",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "490:11:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 4373,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "490:5:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4377,
+                "name": "_pload",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "592:15:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint16_$dyn_storage_ptr",
+                  "typeString": "uint16[] storage pointer"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 4375,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "592:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "id": 4376,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "592:8:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint16_$dyn_storage_ptr",
+                    "typeString": "uint16[] storage pointer"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Details",
+            "nodeType": "StructDefinition",
+            "scope": 4498,
+            "src": "275:377:6",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4428,
+              "nodeType": "Block",
+              "src": "775:184:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 4409,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 4398,
+                        "name": "OliAddressMapping",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4352,
+                        "src": "785:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                          "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+                        }
+                      },
+                      "id": 4400,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 4399,
+                        "name": "oli",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4380,
+                        "src": "803:3:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "785:22:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Details_$4378_storage",
+                        "typeString": "struct OliOrigin.Details storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 4402,
+                          "name": "lat",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4382,
+                          "src": "818:3:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 4403,
+                          "name": "long",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4384,
+                          "src": "823:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 4404,
+                          "name": "trafo",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4386,
+                          "src": "829:5:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 4405,
+                          "name": "ckt",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4388,
+                          "src": "836:3:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 4406,
+                          "name": "typex",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4390,
+                          "src": "841:5:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 4407,
+                          "name": "pload",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4393,
+                          "src": "848:5:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint16_$dyn_memory_ptr",
+                            "typeString": "uint16[] memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          {
+                            "typeIdentifier": "t_array$_t_uint16_$dyn_memory_ptr",
+                            "typeString": "uint16[] memory"
+                          }
+                        ],
+                        "id": 4401,
+                        "name": "Details",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4378,
+                        "src": "810:7:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Details_$4378_storage_ptr_$",
+                          "typeString": "type(struct OliOrigin.Details storage pointer)"
+                        }
+                      },
+                      "id": 4408,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "810:44:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Details_$4378_memory",
+                        "typeString": "struct OliOrigin.Details memory"
+                      }
+                    },
+                    "src": "785:69:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Details_$4378_storage",
+                      "typeString": "struct OliOrigin.Details storage ref"
+                    }
+                  },
+                  "id": 4410,
+                  "nodeType": "ExpressionStatement",
+                  "src": "785:69:6"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4412,
+                        "name": "oli",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4380,
+                        "src": "876:3:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4413,
+                        "name": "lat",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4382,
+                        "src": "881:3:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint32",
+                          "typeString": "uint32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4414,
+                        "name": "long",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4384,
+                        "src": "886:4:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint32",
+                          "typeString": "uint32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint32",
+                          "typeString": "uint32"
+                        },
+                        {
+                          "typeIdentifier": "t_uint32",
+                          "typeString": "uint32"
+                        }
+                      ],
+                      "id": 4411,
+                      "name": "newAddedOli",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4364,
+                      "src": "864:11:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint32_$_t_uint32_$returns$__$",
+                        "typeString": "function (address,uint32,uint32)"
+                      }
+                    },
+                    "id": 4415,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "864:27:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4416,
+                  "nodeType": "ExpressionStatement",
+                  "src": "864:27:6"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    },
+                    "id": 4419,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 4417,
+                      "name": "typex",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4390,
+                      "src": "905:5:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "38",
+                      "id": 4418,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "912:1:6",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_8_by_1",
+                        "typeString": "int_const 8"
+                      },
+                      "value": "8"
+                    },
+                    "src": "905:8:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 4427,
+                  "nodeType": "IfStatement",
+                  "src": "901:52:6",
+                  "trueBody": {
+                    "id": 4426,
+                    "nodeType": "Block",
+                    "src": "914:39:6",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4424,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 4420,
+                              "name": "GSO",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4356,
+                              "src": "928:3:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint32_$_t_address_$",
+                                "typeString": "mapping(uint32 => address)"
+                              }
+                            },
+                            "id": 4422,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 4421,
+                              "name": "trafo",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4386,
+                              "src": "932:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint32",
+                                "typeString": "uint32"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "928:10:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 4423,
+                            "name": "oli",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4380,
+                            "src": "939:3:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "928:14:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 4425,
+                        "nodeType": "ExpressionStatement",
+                        "src": "928:14:6"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "id": 4429,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 4396,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 4395,
+                  "name": "onlyowner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5214,
+                  "src": "766:9:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "766:9:6"
+              }
+            ],
+            "name": "addOli",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4394,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4380,
+                  "name": "oli",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "674:11:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4379,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "674:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4382,
+                  "name": "lat",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "687:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4381,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "687:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4384,
+                  "name": "long",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "699:11:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4383,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "699:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4386,
+                  "name": "trafo",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "712:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4385,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "712:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4388,
+                  "name": "ckt",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "726:9:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 4387,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "726:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4390,
+                  "name": "typex",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "737:11:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 4389,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "737:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4393,
+                  "name": "pload",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "750:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint16_$dyn_memory_ptr",
+                    "typeString": "uint16[] memory"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4391,
+                      "name": "uint16",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "750:6:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint16",
+                        "typeString": "uint16"
+                      }
+                    },
+                    "id": 4392,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "750:8:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint16_$dyn_storage_ptr",
+                      "typeString": "uint16[] storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "673:92:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4397,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "775:0:6"
+            },
+            "scope": 4498,
+            "src": "658:301:6",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4441,
+              "nodeType": "Block",
+              "src": "1073:57:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 4436,
+                        "name": "OliAddressMapping",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4352,
+                        "src": "1090:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                          "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+                        }
+                      },
+                      "id": 4438,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 4437,
+                        "name": "_account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4431,
+                        "src": "1108:8:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1090:27:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Details_$4378_storage",
+                        "typeString": "struct OliOrigin.Details storage ref"
+                      }
+                    },
+                    "id": 4439,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "_type",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 4374,
+                    "src": "1090:33:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "functionReturnParameters": 4435,
+                  "id": 4440,
+                  "nodeType": "Return",
+                  "src": "1083:40:6"
+                }
+              ]
+            },
+            "id": 4442,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "get_oliType",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4432,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4431,
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4442,
+                  "src": "1030:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4430,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1030:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1029:18:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4435,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4434,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4442,
+                  "src": "1066:5:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 4433,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1066:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1065:7:6"
+            },
+            "scope": 4498,
+            "src": "1009:121:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4458,
+              "nodeType": "Block",
+              "src": "1263:66:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 4451,
+                          "name": "OliAddressMapping",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4352,
+                          "src": "1280:17:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                            "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+                          }
+                        },
+                        "id": 4453,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 4452,
+                          "name": "_account",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4444,
+                          "src": "1298:8:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1280:27:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Details_$4378_storage",
+                          "typeString": "struct OliOrigin.Details storage ref"
+                        }
+                      },
+                      "id": 4454,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_pload",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4377,
+                      "src": "1280:34:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint16_$dyn_storage",
+                        "typeString": "uint16[] storage ref"
+                      }
+                    },
+                    "id": 4456,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 4455,
+                      "name": "_index",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4446,
+                      "src": "1315:6:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1280:42:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "functionReturnParameters": 4450,
+                  "id": 4457,
+                  "nodeType": "Return",
+                  "src": "1273:49:6"
+                }
+              ]
+            },
+            "id": 4459,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "get_oliPeakLoad",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4447,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4444,
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4459,
+                  "src": "1205:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4443,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1205:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4446,
+                  "name": "_index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4459,
+                  "src": "1223:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 4445,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1223:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1204:32:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4450,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4449,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4459,
+                  "src": "1255:6:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 4448,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1255:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1254:8:6"
+            },
+            "scope": 4498,
+            "src": "1180:149:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4471,
+              "nodeType": "Block",
+              "src": "1398:55:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 4466,
+                        "name": "OliAddressMapping",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4352,
+                        "src": "1415:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                          "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+                        }
+                      },
+                      "id": 4468,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 4467,
+                        "name": "_account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4461,
+                        "src": "1433:8:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1415:27:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Details_$4378_storage",
+                        "typeString": "struct OliOrigin.Details storage ref"
+                      }
+                    },
+                    "id": 4469,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "ckt",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 4372,
+                    "src": "1415:31:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "functionReturnParameters": 4465,
+                  "id": 4470,
+                  "nodeType": "Return",
+                  "src": "1408:38:6"
+                }
+              ]
+            },
+            "id": 4472,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "get_oliCkt",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4462,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4461,
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4472,
+                  "src": "1355:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4460,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1355:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1354:18:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4465,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4464,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4472,
+                  "src": "1391:5:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 4463,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1391:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1390:7:6"
+            },
+            "scope": 4498,
+            "src": "1335:118:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4484,
+              "nodeType": "Block",
+              "src": "1527:59:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 4479,
+                        "name": "OliAddressMapping",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4352,
+                        "src": "1544:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                          "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+                        }
+                      },
+                      "id": 4481,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 4480,
+                        "name": "_account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4474,
+                        "src": "1562:8:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1544:27:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Details_$4378_storage",
+                        "typeString": "struct OliOrigin.Details storage ref"
+                      }
+                    },
+                    "id": 4482,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "trafoid",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 4370,
+                    "src": "1544:35:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "functionReturnParameters": 4478,
+                  "id": 4483,
+                  "nodeType": "Return",
+                  "src": "1537:42:6"
+                }
+              ]
+            },
+            "id": 4485,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "get_oliTrafoid",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4474,
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4485,
+                  "src": "1483:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4473,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1483:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1482:18:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4478,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4477,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4485,
+                  "src": "1519:6:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4476,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1519:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1518:8:6"
+            },
+            "scope": 4498,
+            "src": "1459:127:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4496,
+              "nodeType": "Block",
+              "src": "1652:33:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 4492,
+                      "name": "GSO",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4356,
+                      "src": "1669:3:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint32_$_t_address_$",
+                        "typeString": "mapping(uint32 => address)"
+                      }
+                    },
+                    "id": 4494,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 4493,
+                      "name": "_tid",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4487,
+                      "src": "1673:4:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint32",
+                        "typeString": "uint32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1669:9:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 4491,
+                  "id": 4495,
+                  "nodeType": "Return",
+                  "src": "1662:16:6"
+                }
+              ]
+            },
+            "id": 4497,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "get_gsoAddr",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4488,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4487,
+                  "name": "_tid",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4497,
+                  "src": "1612:11:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4486,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1612:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1611:13:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4491,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4490,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4497,
+                  "src": "1643:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4489,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1643:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1642:9:6"
+            },
+            "scope": 4498,
+            "src": "1591:94:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 4499,
+        "src": "50:1642:6"
+      }
+    ],
+    "src": "0:1693:6"
+  },
+  "legacyAST": {
+    "absolutePath": "/D/02_OLI/Projects/truffle_auto/contracts/OliOrigin.sol",
+    "exportedSymbols": {
+      "OliOrigin": [
+        4498
+      ]
+    },
+    "id": 4499,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4345,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:6"
+      },
+      {
+        "absolutePath": "/D/02_OLI/Projects/truffle_auto/contracts/mortal.sol",
+        "file": "./mortal.sol",
+        "id": 4346,
+        "nodeType": "ImportDirective",
+        "scope": 4499,
+        "sourceUnit": 5201,
+        "src": "26:22:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 4347,
+              "name": "mortal",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5200,
+              "src": "72:6:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_mortal_$5200",
+                "typeString": "contract mortal"
+              }
+            },
+            "id": 4348,
+            "nodeType": "InheritanceSpecifier",
+            "src": "72:6:6"
+          }
+        ],
+        "contractDependencies": [
+          5200,
+          5224
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4498,
+        "linearizedBaseContracts": [
+          4498,
+          5200,
+          5224
+        ],
+        "name": "OliOrigin",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4352,
+            "name": "OliAddressMapping",
+            "nodeType": "VariableDeclaration",
+            "scope": 4498,
+            "src": "87:46:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+              "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+            },
+            "typeName": {
+              "id": 4351,
+              "keyType": {
+                "id": 4349,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "96:7:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "87:28:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 4350,
+                "name": "Details",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 4378,
+                "src": "107:7:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Details_$4378_storage_ptr",
+                  "typeString": "struct OliOrigin.Details storage pointer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 4356,
+            "name": "GSO",
+            "nodeType": "VariableDeclaration",
+            "scope": 4498,
+            "src": "139:31:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint32_$_t_address_$",
+              "typeString": "mapping(uint32 => address)"
+            },
+            "typeName": {
+              "id": 4355,
+              "keyType": {
+                "id": 4353,
+                "name": "uint32",
+                "nodeType": "ElementaryTypeName",
+                "src": "148:6:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "139:27:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint32_$_t_address_$",
+                "typeString": "mapping(uint32 => address)"
+              },
+              "valueType": {
+                "id": 4354,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "158:7:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "id": 4364,
+            "name": "newAddedOli",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4363,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4358,
+                  "indexed": false,
+                  "name": "paymentAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4364,
+                  "src": "196:22:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4357,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "196:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4360,
+                  "indexed": false,
+                  "name": "latOfLocation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4364,
+                  "src": "220:20:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4359,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "220:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4362,
+                  "indexed": false,
+                  "name": "longOfLocation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4364,
+                  "src": "242:21:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4361,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "242:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "195:69:6"
+            },
+            "src": "178:87:6"
+          },
+          {
+            "canonicalName": "OliOrigin.Details",
+            "id": 4378,
+            "members": [
+              {
+                "constant": false,
+                "id": 4366,
+                "name": "latitude",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "300:15:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 4365,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "300:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4368,
+                "name": "longitude",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "325:16:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 4367,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "325:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4370,
+                "name": "trafoid",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "351:14:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 4369,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "351:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4372,
+                "name": "ckt",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "375:9:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 4371,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "375:5:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4374,
+                "name": "_type",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "490:11:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 4373,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "490:5:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4377,
+                "name": "_pload",
+                "nodeType": "VariableDeclaration",
+                "scope": 4378,
+                "src": "592:15:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint16_$dyn_storage_ptr",
+                  "typeString": "uint16[] storage pointer"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 4375,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "592:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "id": 4376,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "592:8:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint16_$dyn_storage_ptr",
+                    "typeString": "uint16[] storage pointer"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Details",
+            "nodeType": "StructDefinition",
+            "scope": 4498,
+            "src": "275:377:6",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4428,
+              "nodeType": "Block",
+              "src": "775:184:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 4409,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 4398,
+                        "name": "OliAddressMapping",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4352,
+                        "src": "785:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                          "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+                        }
+                      },
+                      "id": 4400,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 4399,
+                        "name": "oli",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4380,
+                        "src": "803:3:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "785:22:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Details_$4378_storage",
+                        "typeString": "struct OliOrigin.Details storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 4402,
+                          "name": "lat",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4382,
+                          "src": "818:3:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 4403,
+                          "name": "long",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4384,
+                          "src": "823:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 4404,
+                          "name": "trafo",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4386,
+                          "src": "829:5:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 4405,
+                          "name": "ckt",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4388,
+                          "src": "836:3:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 4406,
+                          "name": "typex",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4390,
+                          "src": "841:5:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 4407,
+                          "name": "pload",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4393,
+                          "src": "848:5:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_uint16_$dyn_memory_ptr",
+                            "typeString": "uint16[] memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint32",
+                            "typeString": "uint32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          {
+                            "typeIdentifier": "t_array$_t_uint16_$dyn_memory_ptr",
+                            "typeString": "uint16[] memory"
+                          }
+                        ],
+                        "id": 4401,
+                        "name": "Details",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4378,
+                        "src": "810:7:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Details_$4378_storage_ptr_$",
+                          "typeString": "type(struct OliOrigin.Details storage pointer)"
+                        }
+                      },
+                      "id": 4408,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "810:44:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Details_$4378_memory",
+                        "typeString": "struct OliOrigin.Details memory"
+                      }
+                    },
+                    "src": "785:69:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Details_$4378_storage",
+                      "typeString": "struct OliOrigin.Details storage ref"
+                    }
+                  },
+                  "id": 4410,
+                  "nodeType": "ExpressionStatement",
+                  "src": "785:69:6"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4412,
+                        "name": "oli",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4380,
+                        "src": "876:3:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4413,
+                        "name": "lat",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4382,
+                        "src": "881:3:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint32",
+                          "typeString": "uint32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4414,
+                        "name": "long",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4384,
+                        "src": "886:4:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint32",
+                          "typeString": "uint32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint32",
+                          "typeString": "uint32"
+                        },
+                        {
+                          "typeIdentifier": "t_uint32",
+                          "typeString": "uint32"
+                        }
+                      ],
+                      "id": 4411,
+                      "name": "newAddedOli",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4364,
+                      "src": "864:11:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint32_$_t_uint32_$returns$__$",
+                        "typeString": "function (address,uint32,uint32)"
+                      }
+                    },
+                    "id": 4415,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "864:27:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4416,
+                  "nodeType": "ExpressionStatement",
+                  "src": "864:27:6"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    },
+                    "id": 4419,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 4417,
+                      "name": "typex",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4390,
+                      "src": "905:5:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "38",
+                      "id": 4418,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "912:1:6",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_8_by_1",
+                        "typeString": "int_const 8"
+                      },
+                      "value": "8"
+                    },
+                    "src": "905:8:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 4427,
+                  "nodeType": "IfStatement",
+                  "src": "901:52:6",
+                  "trueBody": {
+                    "id": 4426,
+                    "nodeType": "Block",
+                    "src": "914:39:6",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4424,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 4420,
+                              "name": "GSO",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4356,
+                              "src": "928:3:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint32_$_t_address_$",
+                                "typeString": "mapping(uint32 => address)"
+                              }
+                            },
+                            "id": 4422,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 4421,
+                              "name": "trafo",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4386,
+                              "src": "932:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint32",
+                                "typeString": "uint32"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "928:10:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 4423,
+                            "name": "oli",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4380,
+                            "src": "939:3:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "928:14:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 4425,
+                        "nodeType": "ExpressionStatement",
+                        "src": "928:14:6"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "id": 4429,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 4396,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 4395,
+                  "name": "onlyowner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5214,
+                  "src": "766:9:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "766:9:6"
+              }
+            ],
+            "name": "addOli",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4394,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4380,
+                  "name": "oli",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "674:11:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4379,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "674:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4382,
+                  "name": "lat",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "687:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4381,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "687:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4384,
+                  "name": "long",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "699:11:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4383,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "699:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4386,
+                  "name": "trafo",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "712:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4385,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "712:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4388,
+                  "name": "ckt",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "726:9:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 4387,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "726:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4390,
+                  "name": "typex",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "737:11:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 4389,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "737:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4393,
+                  "name": "pload",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4429,
+                  "src": "750:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint16_$dyn_memory_ptr",
+                    "typeString": "uint16[] memory"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4391,
+                      "name": "uint16",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "750:6:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint16",
+                        "typeString": "uint16"
+                      }
+                    },
+                    "id": 4392,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "750:8:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint16_$dyn_storage_ptr",
+                      "typeString": "uint16[] storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "673:92:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4397,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "775:0:6"
+            },
+            "scope": 4498,
+            "src": "658:301:6",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4441,
+              "nodeType": "Block",
+              "src": "1073:57:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 4436,
+                        "name": "OliAddressMapping",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4352,
+                        "src": "1090:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                          "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+                        }
+                      },
+                      "id": 4438,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 4437,
+                        "name": "_account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4431,
+                        "src": "1108:8:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1090:27:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Details_$4378_storage",
+                        "typeString": "struct OliOrigin.Details storage ref"
+                      }
+                    },
+                    "id": 4439,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "_type",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 4374,
+                    "src": "1090:33:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "functionReturnParameters": 4435,
+                  "id": 4440,
+                  "nodeType": "Return",
+                  "src": "1083:40:6"
+                }
+              ]
+            },
+            "id": 4442,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "get_oliType",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4432,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4431,
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4442,
+                  "src": "1030:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4430,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1030:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1029:18:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4435,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4434,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4442,
+                  "src": "1066:5:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 4433,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1066:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1065:7:6"
+            },
+            "scope": 4498,
+            "src": "1009:121:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4458,
+              "nodeType": "Block",
+              "src": "1263:66:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 4451,
+                          "name": "OliAddressMapping",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4352,
+                          "src": "1280:17:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                            "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+                          }
+                        },
+                        "id": 4453,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 4452,
+                          "name": "_account",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4444,
+                          "src": "1298:8:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1280:27:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Details_$4378_storage",
+                          "typeString": "struct OliOrigin.Details storage ref"
+                        }
+                      },
+                      "id": 4454,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_pload",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4377,
+                      "src": "1280:34:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint16_$dyn_storage",
+                        "typeString": "uint16[] storage ref"
+                      }
+                    },
+                    "id": 4456,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 4455,
+                      "name": "_index",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4446,
+                      "src": "1315:6:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1280:42:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "functionReturnParameters": 4450,
+                  "id": 4457,
+                  "nodeType": "Return",
+                  "src": "1273:49:6"
+                }
+              ]
+            },
+            "id": 4459,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "get_oliPeakLoad",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4447,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4444,
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4459,
+                  "src": "1205:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4443,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1205:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4446,
+                  "name": "_index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4459,
+                  "src": "1223:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 4445,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1223:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1204:32:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4450,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4449,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4459,
+                  "src": "1255:6:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 4448,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1255:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1254:8:6"
+            },
+            "scope": 4498,
+            "src": "1180:149:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4471,
+              "nodeType": "Block",
+              "src": "1398:55:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 4466,
+                        "name": "OliAddressMapping",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4352,
+                        "src": "1415:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                          "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+                        }
+                      },
+                      "id": 4468,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 4467,
+                        "name": "_account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4461,
+                        "src": "1433:8:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1415:27:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Details_$4378_storage",
+                        "typeString": "struct OliOrigin.Details storage ref"
+                      }
+                    },
+                    "id": 4469,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "ckt",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 4372,
+                    "src": "1415:31:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "functionReturnParameters": 4465,
+                  "id": 4470,
+                  "nodeType": "Return",
+                  "src": "1408:38:6"
+                }
+              ]
+            },
+            "id": 4472,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "get_oliCkt",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4462,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4461,
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4472,
+                  "src": "1355:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4460,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1355:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1354:18:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4465,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4464,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4472,
+                  "src": "1391:5:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 4463,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1391:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1390:7:6"
+            },
+            "scope": 4498,
+            "src": "1335:118:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4484,
+              "nodeType": "Block",
+              "src": "1527:59:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 4479,
+                        "name": "OliAddressMapping",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4352,
+                        "src": "1544:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Details_$4378_storage_$",
+                          "typeString": "mapping(address => struct OliOrigin.Details storage ref)"
+                        }
+                      },
+                      "id": 4481,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 4480,
+                        "name": "_account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4474,
+                        "src": "1562:8:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1544:27:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Details_$4378_storage",
+                        "typeString": "struct OliOrigin.Details storage ref"
+                      }
+                    },
+                    "id": 4482,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "trafoid",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 4370,
+                    "src": "1544:35:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "functionReturnParameters": 4478,
+                  "id": 4483,
+                  "nodeType": "Return",
+                  "src": "1537:42:6"
+                }
+              ]
+            },
+            "id": 4485,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "get_oliTrafoid",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4474,
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4485,
+                  "src": "1483:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4473,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1483:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1482:18:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4478,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4477,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4485,
+                  "src": "1519:6:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4476,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1519:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1518:8:6"
+            },
+            "scope": 4498,
+            "src": "1459:127:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4496,
+              "nodeType": "Block",
+              "src": "1652:33:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 4492,
+                      "name": "GSO",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4356,
+                      "src": "1669:3:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint32_$_t_address_$",
+                        "typeString": "mapping(uint32 => address)"
+                      }
+                    },
+                    "id": 4494,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 4493,
+                      "name": "_tid",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4487,
+                      "src": "1673:4:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint32",
+                        "typeString": "uint32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1669:9:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 4491,
+                  "id": 4495,
+                  "nodeType": "Return",
+                  "src": "1662:16:6"
+                }
+              ]
+            },
+            "id": 4497,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "get_gsoAddr",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4488,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4487,
+                  "name": "_tid",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4497,
+                  "src": "1612:11:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 4486,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1612:6:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1611:13:6"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 4491,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4490,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4497,
+                  "src": "1643:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4489,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1643:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1642:9:6"
+            },
+            "scope": 4498,
+            "src": "1591:94:6",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 4499,
+        "src": "50:1642:6"
+      }
+    ],
+    "src": "0:1693:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xfb88de099e13c3ed21f80a7a1e49f8caecf10df6",
+      "transactionHash": "0x563da946a6277e56344d4da94d5c62bc90a133e19fc4d5925b9679804b4f7418"
+    }
+  },
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-05-03T19:01:26.345Z"
+}
