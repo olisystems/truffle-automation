@@ -8,7 +8,9 @@ As well there is an automation process implemented, that deploys solidity smart 
 . \js\contracts\addresses\addresses.js
 
 How to perform the automation:
+
 1.)	Download, install and run the Ethereum test network ganache
+
 http://truffleframework.com/ganache/
 
 2.)	Install the Ethereum development framework truffle
