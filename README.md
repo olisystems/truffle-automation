@@ -17,5 +17,13 @@ How to perform the automation:
 
   http://truffleframework.com/
 
+3.)	Run .\init_ganache.bat
 
-The server.js file 
+The init_ganache.bat process deploys the smart contracts that are located in 
+
+.\contracts
+
+and writes all contract addresses into 
+
+. \js\contracts\addresses\addresses.js
+
