@@ -11,10 +11,11 @@ How to perform the automation:
 
 1.)	Download, install and run the Ethereum test network ganache
 
-http://truffleframework.com/ganache/
+  http://truffleframework.com/ganache/
 
 2.)	Install the Ethereum development framework truffle
-http://truffleframework.com/
+
+  http://truffleframework.com/
 
 
 The server.js file 
